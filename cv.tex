@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Dr. Martin Swientek}
+\tagline{I lead innovative cloud projects to success}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{profilbild_neu}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{martin@swientek.org}
+  \phone{+49 162 2906385}
+  \mailaddress{Londoner Str. 2, 60327 Frankfurt, Germany}
+  \location{Frankfurt / Main, Germany}
+  \linkedin{dr-martin-swientek}
+  \github{mswiente}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Managing Delivery Architect}{Capgemini}{Febr. 2008 -- Ongoing}{Frankfurt, Germany}
+\begin{itemize}
+\item Member of the Cloud Center of Excellence helping clients to adopt Cloud technologies
+\item Working together with the sales organization on bids as lead architect responsible for the solution
+\item Supporting an automotive company to build a sovereign data space aligned with the principles of Gaia-X
+\item Built and operated a microservice-based Cloud Integration Platform as a Managed Service (iPaaS) for an energy provider generating more than 2M EUR revenue per year with an onsite/offshore team of up to 14 FTE based on a DevOps model. The solution has been used as a success story and a customer reference for the Gartner Magic Quadrant.
+\item Built a seal of approval for trusted cloud services to foster the cloud adoption of SMEs initiated by the Federal Ministry of Economic Affairs and Energy, defined a criteria catalogue for trusted cloud services and conducted reviews to award the seal.
+\end{itemize}
+
+\divider
+
+\cvevent{Systems Engineer}{T-Systems}{2003 -- 2008}{Darmstadt, Germany}
+\begin{itemize}
+\item Designed and developed a system for bill formatting and processing for the mass market for a large telecommunications provider that processed more than 30 million bills per month
+\end{itemize}
+
+\cvsection{Certification}
+
+\begin{itemize}
+\item Cloud Security Professional (CCSP)
+\item Professional Scrum Master (PSM I)
+\end{itemize}
+
+\medskip
+
+\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{1.5cm}{0.5cm}{%
+  25/8em/accent!70/{Sleeping \& Dreaming},
+  10/8em/accent!10/Business development,
+  15/8em/accent!20/Client work,
+  10/10em/accent!30/Olympic Weightlifting \& Crossfit,
+  10/10em/accent!40/Learning something new,
+  20/6em/accent!50/Spending time with my family,
+  10/6em/accent!60/Feeding the cats
+}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{My Life Philosophy}
+
+\begin{quote}
+``Light weight, Baby!'' - Ronnie Coleman
+\end{quote}
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{Finishing my PhD}{with a fulltime job}
+
+\divider
+
+\cvachievement{\faHeartbeat}{My little son}{and my family}
+
+\cvsection{Strengths}
+
+\cvtag{Strong technical understanding}\\
+\cvtag{Software Engineering background}\\
+\cvtag{Effective communication}
+\cvtag{Persistence}
+\cvtag{Teamplayer}
+\cvtag{Hands-on mentality}\\
+\cvtag{Building trust}
+\cvtag{Client intimacy}
+
+\divider\smallskip
+
+\cvtag{Amazon Webservices}
+\cvtag{Cloud Architecture}\\
+\cvtag{Cloud Integration Platforms}
+\cvtag{Scrum}
+\cvtag{SAFe}
+\cvtag{Restful APIs}
+
+\cvsection{Languages}
+
+\cvskill{German}{5}
+\divider
+
+\cvskill{English}{4}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\cvsection{Education}
+
+\cvevent{Ph.D.}{Plymouth University\\School of Engineering, Computing and Mathematics }{2008 -- 2015}{}
+Thesis title: High-Performance Near-Time Processing of Bulk Data
+
+\divider
+
+\cvevent{M.Sc.\ in Computer Science}{Hochschule Darmstadt}{2005 -- 2008}{}
+
+\divider
+
+\cvevent{B.Sc.\ in Computer Science}{Hochschule Darmstadt}{2000 -- 2005}{}
+
+% \divider
+
+\end{paracol}
+
+
+\end{document}
